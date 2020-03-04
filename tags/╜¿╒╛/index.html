@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vainking">
-    <meta name="description" content="vainking">
+    <meta name="keywords" content="标签: 建站, vainking">
+    <meta name="description" content="标签: 建站 | vainking">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>vainking</title>
+    <title>标签: 建站 | vainking</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -236,56 +236,9 @@
 
 </header>
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color:rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -320,224 +273,61 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-
-
-    <a href="mailto:895639000@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=895639000" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 895639000" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true'
-        });
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function() {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        let restartPlay = function () {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
 
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/flutter/" title="flutter: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="flutter" style="background-color: #F9EBEA;">flutter
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%BB%BA%E7%AB%99/" title="建站: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="建站" style="background-color: #F5EEF8;">建站
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
-    
+</div>
 
     
 
-    
-
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/03/05/0441.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="hexo▓σ╝■╥└└╡">
-                            
-                            <span class="card-title">hexo▓σ╝■╥└└╡</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1.文章字数统计插件:cnpm i --save hexo-wordcount
- 然后只需在主题下的 _config.yml 文件中，将各个文章字数相关的配置激活即可：     postInfo:        date: true    
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                vainking
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/03/05/0305.html">
-                        <div class="card-image">
-                            
-                            <img src="https://s2.ax1x.com/2020/03/02/3fQYZj.jpg" class="responsive-img" alt="flutter配置">
-                            
-                            <span class="card-title">flutter配置</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-    
-
-1.解决无法连接手机问题解决办法：设置环境变量export ANDROID_HOME=/media/baloneo/disk/androidsdk    // 安卓sdk目录
-export PATH=$PATH:/home/b
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                vainking
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/flutter/">
-                            <span class="chip bg-color">flutter</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-tags="建站" data-aos="fade-up">
                 <div class="card">
                     <a href="/2020/03/02/2311.html">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             <img src="https://s2.ax1x.com/2020/03/02/3fQYZj.jpg" class="responsive-img" alt="我的blog 终于上线了(｡♥‿♥｡)">
                             
                             <span class="card-title">我的blog 终于上线了(｡♥‿♥｡)</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-      
-
-历时半天终于将我的blog从国内的码云以及国外的github同时上线了，唉说说都是心酸泪。顺便也来总结一下建站经验。我使用的是manjaro+kde桌面，manjaro 有极好用的pacman包管理器，而且与wine的兼容
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-03-02
@@ -550,22 +340,11 @@ export PATH=$PATH:/home/b
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%BB%BA%E7%AB%99/">
-                            <span class="chip bg-color">建站</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
         </div>
     </article>
-
 </main>
 
 
