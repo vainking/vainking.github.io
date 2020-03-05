@@ -93,33 +93,45 @@
   
   <li class="hide-on-med-and-down nav-item">
     
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>悦享</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/gallery">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
     <a href="/about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
     </a>
     
   </li>
@@ -195,33 +207,46 @@
         
         <li class="m-nav-item">
 	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			悦享
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/musics " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/gallery " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>相册</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
 		<a href="/about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
 		</a>
           
         </li>
@@ -384,7 +409,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    425
+                    443
                 </div>
                 
 
@@ -407,7 +432,8 @@
 <h2 id="2-全文搜索"><a href="#2-全文搜索" class="headerlink" title="2.全文搜索:"></a>2.全文搜索:</h2><p> <code>cnpm install hexo-generator-search --save</code><br>  在博客根目录下的_config.yml文件里添加：</p>
 <pre><code>search:
     path: search.xml
-    field: post</code></pre><h2 id="3-中文链接转拼音"><a href="#3-中文链接转拼音" class="headerlink" title="3.中文链接转拼音:"></a>3.中文链接转拼音:</h2><p><code>cnpm i hexo-permalink-pinyin --save</code><br>在博客根目录下的_config.yml文件里添加： </p>
+    field: post
+    content: true //要开可以解决无法使用搜索的情况</code></pre><h2 id="3-中文链接转拼音"><a href="#3-中文链接转拼音" class="headerlink" title="3.中文链接转拼音:"></a>3.中文链接转拼音:</h2><p><code>cnpm i hexo-permalink-pinyin --save</code><br>在博客根目录下的_config.yml文件里添加： </p>
 <pre><code>permalink_pinyin:
     enable: true
     separator: &apos;-&apos; # default: &apos;-&apos;</code></pre><h2 id="4-播放音乐"><a href="#4-播放音乐" class="headerlink" title="4.播放音乐:"></a>4.播放音乐:</h2><p><code>cnpm install --save hexo-tag-aplayer</code></p>
@@ -441,7 +467,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://vainking.gitee.io/2020/03/05/0441.html">http://vainking.gitee.io/2020/03/05/0441.html</a>
+                    <a href="http://vainking.gitee.io/2020/03/05/0531.html">http://vainking.gitee.io/2020/03/05/0531.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -647,7 +673,7 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/03/05/0441.html">
+                <a href="/2020/03/05/0531.html">
                     <div class="card-image">
                         
                         

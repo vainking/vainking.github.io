@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, vainking">
-    <meta name="description" content="分类 | vainking">
+    <meta name="keywords" content="我最喜欢的图, vainking">
+    <meta name="description" content="我最喜欢的图 | vainking">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>分类 | vainking</title>
+    <title>我最喜欢的图 | vainking</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -261,7 +261,25 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
+    
+<!-- 加密功能 -->
+
+    <script src="/libs/cryptojs/crypto-js.min.js"></script>
+    <script>
+        (function() {
+            let pwd = '';
+
+            if (pwd && pwd.length > 0) {
+                if (pwd !== CryptoJS.SHA256(prompt('该相册已加密，请输入密码访问')).toString(CryptoJS.enc.Hex)) {
+                    alert('密码错误，将返回主页！');
+                    location.href = '/';
+                }
+            }
+        })();
+    </script>
+
+
+<div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -301,28 +319,108 @@
     </div>
 </div>
 
+<link rel="stylesheet" href="/libs/MyGallery/css/baguetteBox.css">
+<!-- 该主题自带的lightGallery.js在图片多的时候会很卡，所以弃用，使用了一个我在网上找的baguetteBox，很轻量级，就是功能少了点 -->
+<script src="/libs/MyGallery/js/baguetteBox.js"></script> 
+<style>    
+    .my-gallery .photo img {
+        transition: all 0.3s ease-in-out; 
+    }     
+    .my-gallery .photo:hover img {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }                
+</style>
+
 <main class="content">
+    <div class="container chip-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fa fa-image"></i>
+                    &nbsp;&nbsp;我最喜欢的图
+                </div>
 
-    
-
-<div id="category-cloud" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
-            </div>
-            <div class="tag-chips">
-                
-                你目前还没有对文章进行分类.
-                
+                <!-- 相册 -->
+                <section class="gallery">
+                    <div id="myGallery" class="my-gallery">
+                        <div class="row">
+                            
+                                
+                                
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://s2.ax1x.com/2020/03/02/3fQYZj.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://s2.ax1x.com/2020/03/02/3fQYZj.jpg" alt="img"+0 >
+                                        </a>
+                                    </div>
+                                
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://s2.ax1x.com/2020/03/02/3WTVHK.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://s2.ax1x.com/2020/03/02/3WTVHK.jpg" alt="img"+1 >
+                                        </a>
+                                    </div>
+                                
+                            
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
-</div>
 
-    
+<script>
+    baguetteBox.run('.gallery', {
+        // 配置参数
+        buttons:Boolean,//是否显示导航按钮。
+        noScrollbars:true,//是否在显示时隐藏滚动条。
+        titleTag:true,//是否使用图片上的title属性作为图片标题
+        async:false,//是否异步加载文件。
+        /*
+        afterShow:function(){//显示遮罩层之后的回调函数。   
+           $(".pressing").fadeIn();
+        },
+        afterHide:function(){//隐藏遮罩层之后的回调函数。 
+           $(".pressing").fadeOut(); 
+        }
+        //preload:5 预加载多少个文件。
+        // onChange: function(currentIndex, imagesCount){} 图片改变时的回调函数 
+        // overlayBackgroundColor:'rgba(0,0,0,0.8)' 遮罩层的背景颜色
+        */
+    });
+
+    start()
+        $(window).on('scroll', function(){
+         start();
+    })
+
+    function start(){
+          //.not('[data-isLoaded]')选中已加载的图片不需要重新加载
+        $('.container img').not('[data-isLoaded]').each(function(){
+            var $node = $(this)
+            if( isShow($node) ){
+                loadImg($node);
+            }
+        });
+     }
+
+    //判断一个元素是不是出现在窗口(视野)
+    function isShow($node){
+        return $node.offset().top <= $(window).height() + $(window).scrollTop();
+    }
+    //加载图片
+    function loadImg($img){
+    //.attr(值)
+    //.attr(属性名称,值)
+        $img.attr('src', $img.attr('data-src')); //把data-src的值 赋值给src
+        $img.attr('data-isLoaded', 1);//已加载的图片做标记
+    }
+
+</script>
 
 </main>
+
 
 
     <footer class="page-footer bg-color">
