@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="相册, vainking">
-    <meta name="description" content="相册 | vainking">
+    <meta name="keywords" content="我最喜欢的图, vainking">
+    <meta name="description" content="我最喜欢的图 | vainking">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>相册 | vainking</title>
+    <title>我最喜欢的图 | vainking</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -103,7 +103,7 @@
     <ul class="sub-nav menus_item_child ">
       
       <li>
-        <a href="/medias/musics">
+        <a href="/enjoyment/musics">
           
           <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
           
@@ -112,7 +112,7 @@
       </li>
       
       <li>
-        <a href="/medias/gallery">
+        <a href="/enjoyment/gallery">
           
           <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
           
@@ -217,7 +217,7 @@
               
                 <li>   
 				
-                  <a href="/medias/musics " style="margin-left:75px";>
+                  <a href="/enjoyment/musics " style="margin-left:75px";>
 				  
 				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
 			      
@@ -227,7 +227,7 @@
               
                 <li>   
 				
-                  <a href="/medias/gallery " style="margin-left:75px";>
+                  <a href="/enjoyment/gallery " style="margin-left:75px";>
 				  
 				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
 			      
@@ -262,6 +262,23 @@
 </header>
 
     
+<!-- 加密功能 -->
+
+    <script src="/libs/cryptojs/crypto-js.min.js"></script>
+    <script>
+        (function() {
+            let pwd = '';
+
+            if (pwd && pwd.length > 0) {
+                if (pwd !== CryptoJS.SHA256(prompt('该相册已加密，请输入密码访问')).toString(CryptoJS.enc.Hex)) {
+                    alert('密码错误，将返回主页！');
+                    location.href = '/';
+                }
+            }
+        })();
+    </script>
+
+
 <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
@@ -302,86 +319,17 @@
     </div>
 </div>
 
-<!-- Created by hehung on 20191208 -- >
-<!-- 增加相册显示的特效样式 -->
-<style>
-    .text_des{
-        position: absolute;
-        width: 92%;
-        height: 100%;
-        top: 0;
-        color: #000;
-    /*    opacity: 0;     */
-        overflow: hidden;
-    }
-    .text_des h3{
-        margin: 5px 0 8px 0px;
-        right: 40px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-        position: absolute;
-        top: 10%;
-        font-style: italic;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    /*    transform: translateX(200px);  */
-    }
-    .text_des p{
-        left: 15px;
-        position: absolute;
-        top: 50%;
-    /*    transform: translateX(-200px); 
-        transition-delay: 0.2s;    */
-    }
+<link rel="stylesheet" href="/libs/MyGallery/css/baguetteBox.css">
+<!-- 该主题自带的lightGallery.js在图片多的时候会很卡，所以弃用，使用了一个我在网上找的baguetteBox，很轻量级，就是功能少了点 -->
+<script src="/libs/MyGallery/js/baguetteBox.js"></script> 
+<style>    
     .my-gallery .photo img {
-        border-radius: 1px;
-    }
-
-     /*大屏幕下(桌面类)的样式*/
-    @media only screen and (min-width: 993px) {
-        .text_des h3{
-            transform: translateX(200px);
-        }
-        .text_des p{
-            transform: translateX(-200px); 
-            transition-delay: 0.2s;
-        }
-        .animate-text {
-            opacity: 0;
-            transition: all 0.6s ease-in-out; 
-        }
-        .img-item {
-            transition: all 0.4s ease-out;
-        }
-        .img-item a img{
-            opacity: 1;
-            transition: all 0.4s ease-out;
-        }
-        .img-item a:hover img{
-            opacity: 0.5;
-            transform: scale(1.05);
-        }
-        .img-item a:hover .text_des{
-        /*    opacity: 1;   */
-            transform: scale(1.05); 
-        }
-        .img-item a:hover .animate-text{
-            transform: translateX(0);
-            opacity: 1; 
-        }
-    }
-
-
-    /*小屏幕下(桌面类)的样式*/
-    @media only screen and (max-width: 992px) {
-        .img-item a img{
-            opacity: 0.75;
-        }
-        .animate-text {
-            opacity: 1;
-        }
-    }
-
+        transition: all 0.3s ease-in-out; 
+    }     
+    .my-gallery .photo:hover img {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }                
 </style>
 
 <main class="content">
@@ -389,107 +337,90 @@
         <div class="card">
             <div class="card-content">
                 <div class="tag-title center-align">
-                    <i class="fa fa-images"></i>
-                    &nbsp;&nbsp;我的相册
+                    <i class="fa fa-image"></i>
+                    &nbsp;&nbsp;我最喜欢的图
                 </div>
-                <div class="my-gallery">
-                    <div class="row">
-                    <!-- <li class="grid-sizer"></li> --><!-- for Masonry column width -->
-                    
-                        
-                        
-                            
-                            
-                            <div class="photo col s12 m6 l4" data-aos="zoom-in-up">
-                                <div class="img-item">
-                                    <a href="./我最喜欢的图">
-                                        <img src="/medias/loading.gif" data-src="https://s2.ax1x.com/2020/03/02/3fQYZj.jpg" class="responsive-img" alt="img"+0 />
-                                        <div class="text_des">
-                                            
-                                                <h3 class="animate-text">我最喜欢的图</h3>
-                                                <p class="animate-text"></p>
-                                            
 
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                <!-- 相册 -->
+                <section class="gallery">
+                    <div id="myGallery" class="my-gallery">
+                        <div class="row">
                             
-                        
+                                
+                                
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://s2.ax1x.com/2020/03/02/3fQYZj.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://s2.ax1x.com/2020/03/02/3fQYZj.jpg" alt="img"+0 >
+                                        </a>
+                                    </div>
+                                
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://s2.ax1x.com/2020/03/02/3WTVHK.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://s2.ax1x.com/2020/03/02/3WTVHK.jpg" alt="img"+1 >
+                                        </a>
+                                    </div>
+                                
                             
-                            
-                            <div class="photo col s12 m6 l4" data-aos="zoom-in-up">
-                                <div class="img-item">
-                                    <a href="./我最喜欢的图1">
-                                        <img src="/medias/loading.gif" data-src="https://s2.ax1x.com/2020/03/02/3WTVHK.jpg" class="responsive-img" alt="img"+1 />
-                                        <div class="text_des">
-                                            
-                                                <h3 class="animate-text">我最喜欢的图1</h3>
-                                                <p class="animate-text"></p>
-                                            
-
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                        
-                            
-                            
-                            <div class="photo col s12 m6 l4" data-aos="zoom-in-up">
-                                <div class="img-item">
-                                    <a href="./我最喜欢的图2">
-                                        <img src="/medias/loading.gif" data-src="https://s2.ax1x.com/2020/03/02/3WTVHK.jpg" class="responsive-img" alt="img"+2 />
-                                        <div class="text_des">
-                                            
-                                                <h3 class="animate-text">我最喜欢的图2</h3>
-                                                <p class="animate-text"></p>
-                                            
-
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                        
-                    
-                </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
 
-    <script>
-        start()
-            $(window).on('scroll', function(){
-             start();
-        })
-
-        function start(){
-              //.not('[data-isLoaded]')选中已加载的图片不需要重新加载
-            $('.container img').not('[data-isLoaded]').each(function(){
-                var $node = $(this)
-                if( isShow($node) ){
-                    loadImg($node);
-                }
-            });
-         }
-
-        //判断一个元素是不是出现在窗口(视野)
-        function isShow($node){
-            return $node.offset().top <= $(window).height() + $(window).scrollTop();
+<script>
+    baguetteBox.run('.gallery', {
+        // 配置参数
+        buttons:Boolean,//是否显示导航按钮。
+        noScrollbars:true,//是否在显示时隐藏滚动条。
+        titleTag:true,//是否使用图片上的title属性作为图片标题
+        async:false,//是否异步加载文件。
+        /*
+        afterShow:function(){//显示遮罩层之后的回调函数。   
+           $(".pressing").fadeIn();
+        },
+        afterHide:function(){//隐藏遮罩层之后的回调函数。 
+           $(".pressing").fadeOut(); 
         }
-        //加载图片
-        function loadImg($img){
-        //.attr(值)
-        //.attr(属性名称,值)
-            $img.attr('src', $img.attr('data-src')); //把data-src的值 赋值给src
-            $img.attr('data-isLoaded', 1);//已加载的图片做标记
-        }
+        //preload:5 预加载多少个文件。
+        // onChange: function(currentIndex, imagesCount){} 图片改变时的回调函数 
+        // overlayBackgroundColor:'rgba(0,0,0,0.8)' 遮罩层的背景颜色
+        */
+    });
 
-    </script>
+    start()
+        $(window).on('scroll', function(){
+         start();
+    })
+
+    function start(){
+          //.not('[data-isLoaded]')选中已加载的图片不需要重新加载
+        $('.container img').not('[data-isLoaded]').each(function(){
+            var $node = $(this)
+            if( isShow($node) ){
+                loadImg($node);
+            }
+        });
+     }
+
+    //判断一个元素是不是出现在窗口(视野)
+    function isShow($node){
+        return $node.offset().top <= $(window).height() + $(window).scrollTop();
+    }
+    //加载图片
+    function loadImg($img){
+    //.attr(值)
+    //.attr(属性名称,值)
+        $img.attr('src', $img.attr('data-src')); //把data-src的值 赋值给src
+        $img.attr('data-isLoaded', 1);//已加载的图片做标记
+    }
+
+</script>
 
 </main>
- 
+
 
 
     <footer class="page-footer bg-color">
@@ -619,9 +550,16 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
     
 
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
     
     
